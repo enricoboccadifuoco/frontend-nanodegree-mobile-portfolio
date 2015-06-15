@@ -6,13 +6,13 @@ To get started, check out the repository, inspect the code,
 
 ### Grunt taks
 
-1. minifyHtml taks
+1. minifyHtml tasks
 
     ``` bash
     grunt minifyHtml
     ```
 
-1. pagespeed ngrok taks
+1. pagespeed ngrok tasks
 
     ``` bash
     grunt psi-ngrok
