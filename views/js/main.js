@@ -148,6 +148,9 @@ String.prototype.capitalize = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
+// Whole-script strict mode syntax
+"use strict";
+
 // Pulls adjective out of array using random number sent from generator
 function getAdj(x){
   switch(x) {
@@ -532,41 +535,40 @@ function updatePositions() {
  * @desc calculate pizza rows, fit on screen width and height
  *
  */
-
 function calculatePizzaRows() {
-    var s = 256;
+  var s = 256;
 
-    var pizzaH = 100;
-    var pizzaW = 73.333;
+  var pizzaH = 100;
+  var pizzaW = 73.333;
 
-    var row = {
-      x: 0,
-      y: 0
-    };
+  var row = {
+    x: 0,
+    y: 0
+  };
 
-    while (row.y <= window.innerHeight) {
+  while (row.y <= window.innerHeight) {
 
-      row.x = 0;
+    row.x = 0;
 
-      while (row.x <= window.innerWidth) {
-        var elem = document.createElement('img');
-        elem.className = 'mover';
-        elem.src = "images/pizza.png";
+    while (row.x <= window.innerWidth) {
+      var elem = document.createElement('img');
+      elem.className = 'mover';
+      elem.src = "images/pizza.png";
 
-        elem.style.height = pizzaH + "px";
-        elem.style.width = pizzaW + "px";
+      elem.style.height = pizzaH + "px";
+      elem.style.width = pizzaW + "px";
 
-        elem.style.top = row.y + 'px';
-        elem.style.left = row.x + 'px'; // adding first position
+      elem.style.top = row.y + 'px';
+      elem.style.left = row.x + 'px'; // adding first position
 
-        document.getElementById("movingPizzas1").appendChild(elem);
+      document.getElementById("movingPizzas1").appendChild(elem);
 
-        row.x += s;
-      }
-
-      row.y += s;
-
+      row.x += s;
     }
+
+    row.y += s;
+
+  }
 }
 
 // runs updatePositions on scroll
